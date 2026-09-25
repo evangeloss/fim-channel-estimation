@@ -65,7 +65,7 @@ def main():
         fc=28e9, fs=1e5, n_subcarriers=args.subcarriers,
         n_deformations=8, n_paths=3, n_pilots=1, snr_values=[args.snr_db], residual_reference='mean')
     splits = dict(
-    train=dict(n_channels=args.train_channels, b_min=0.1, b_max=0.2, seed=args.seed+101),
+    train=dict(n_channels=args.train_channels, b_min=0.1, b_max=0.1, seed=args.seed+101),
     validation=dict(n_channels=args.validation_channels, b_min=0.1, b_max=0.1, seed=args.seed+202),
     extrapolation=dict(n_channels=args.test_channels, b_min=0.35, b_max=0.50, seed=args.seed+303))
     estimated_bytes = sum(s['n_channels'] for s in splits.values()) * (args.subcarriers-1) * 25*25*(32+8*6+4)*4
